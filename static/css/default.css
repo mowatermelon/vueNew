@@ -1,0 +1,164 @@
+﻿@charset "utf-8";
+/*
+！*作者：WU EVA
+！*时间:2017/5/7
+**/
+/*
+common css
+公共样式
+*/
+:root {
+  //--c: #FF9393;
+  --c: #5bc0de;
+
+}
+.bg_root{
+	background:var(--c);
+}
+body{
+  color:var(--c);
+  font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+  height: 100%;
+}
+ul,li {
+  margin: 0;
+  padding: 0;
+}
+.text-nowrap{
+    white-space: nowrap;
+}
+.m-l-10{
+  margin-left: 10%;
+}
+.m-l-20{
+  margin-left: 20%;
+}
+.m-l-30{
+  margin-left: 30%;
+}
+.m-l-40{
+  margin-left: 40%;
+}
+p {
+    margin: auto !important;
+    /*cursor: pointer;*/
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color:#fff;
+    background-image: none;
+    color: rgb(0, 0, 0);
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+.btn-link:hover,
+.btn-link:focus {
+  color: var(--c);
+}
+
+.form-control {
+    color: var(--c);
+  }
+
+@media (max-width:768px){
+  .col-xs-12{
+    padding-left:0;
+    padding-right:0;
+  }
+}
+.checked-G{
+  color: var(--c);
+}
+
+.last-p{
+  line-height: 2.0;
+  word-spacing: 0.8em;
+  display: inline-block;
+  position: relative;
+}
+
+.last-p:before, .last-p:after {
+    content: '';                 /*CSS伪类用法*/
+    position: absolute;         /*定位背景横线的位置*/
+    top: 52%;
+    background: var(--c);      /*宽和高做出来的背景横线*/
+    width: 25%;
+    height: 2px;
+}
+.last-p:before{
+    left: 8%;        /*调整背景横线的左右距离*/
+}
+.last-p:after {
+    right: 8%;
+}
+
+span.glyphicon-chevron-left,a.glyphicon-chevron-left,button.glyphicon-chevron-left
+{
+    line-height: 3em;
+    color: var(--c);
+	  text-indent: 1em;
+ }
+newdetail css
+文字详情页样式
+*/
+.detailMain{
+  /*background: var(--c);*/
+}
+/*
+login css
+登录界面样式
+*/
+
+/*
+page-bar css
+分页主页样式
+*/
+.page-bar li {
+  list-style: none;
+  display: inline-block;
+}
+
+.page-bar li:first-child>a {
+  margin-left: 0px
+}
+
+.page-bar a {
+  border: 1px solid #ddd;
+  text-decoration: none;
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: var(--c);
+  cursor: pointer
+}
+
+.page-bar a:hover {
+  background-color: #eee;
+}
+
+.page-bar .active a {
+  color: #fff;
+  cursor: default;
+  background-color: var(--c);
+  border-color: var(--c);
+}
+
+.page-bar i {
+  font-style:normal;
+  color: var(--c);
+  margin: 0px 4px;
+  font-size: 12px;
+}
+/*
+showSetting
+
+*/
