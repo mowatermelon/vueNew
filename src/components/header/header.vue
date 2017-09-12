@@ -1,14 +1,14 @@
 <template>
-  <div class="header fixheader">
-    <div class="input-group col-xs-8 pull-right">
-        <input type="text" placeholder="请输入想要搜索的内容" id="looKey"/>
-        <label class="input-group-addon glyphicon glyphicon-search searchIcon"></label>
-    </div>
-  </div>
+  <div class="header fixheader mdui-headroom mdui-row">
+      <div class="mdui-textfield mdui-textfield-expandable mdui-float-right">
+        <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+        <input class="mdui-textfield-input" type="text" placeholder="搜索的内容" id="looKey"/>
+        <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+      </div>
+ </div>
 </template>
 
 <script type="text/ecmascript-6">
-
 export default {
   name: 'header',
   prop: {
@@ -19,35 +19,19 @@ export default {
 };
 </script>
 
-<style>
-.header .input-group{
-    background: #fff;
-    border-radius: 1rem;
+<style scoped>
+.mdui-textfield-expandable.mdui-textfield-expanded {
+    width: 60%;
 }
-.header .input-group .searchIcon{
-    background: var(--c);
-    border: 1px solid var(--c);
-    border-left-width: 0;
-    color: #fff;
-    top:0;
-    padding: 5px 12px;
-}
-.header .input-group #looKey{
-  margin-right: 2rem;
-  border: 1px solid var(--c);
-  border-right-width: 0;
-  outline:none;
-  line-height: 2;
-  border-radius: 1rem 0 0 1rem;
-  text-indent: 2rem;
-  width: 100%;
+.mdui-textfield-expandable.mdui-float-right{
+  margin-right: 1rem;
 }
 .header{
   background:#fff url(../../../static/img/MSHKLogo.png) no-repeat;
   background-size: 4rem 4rem;
   background-position: 2rem center;
   border-bottom: 1px solid var(--c);
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 .fixheader{
   position: fixed;

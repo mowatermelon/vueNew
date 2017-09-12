@@ -1,22 +1,33 @@
 <template>
   <transition name="slide">
-    <div class="showPic">
+    <div class="mdui-container-fulid">
         <div id="myCarousel" class="carousel">
           <swipe class="my-swipe" :speed="100" :show-indicators="false" :no-drag="true">
             <swipe-item v-for="(pic, idx) in img" key="idx"><img :src="pic.src"/></swipe-item>
           </swipe>
         </div>
-        <ul class="list-unstyled">
-          <li class="col-xs-6"  v-for="(item,index) in picData" :id="'pic-' + index">
+        <ul class="mdui-list">
+          <li class="mdui-col-xs-6 mdui-col-sm-4 mdui-list-item"  v-for="(item,index) in picData" :id="'pic-' + index">
             <a class="thumbnail" @click="godetail(item)" :title='item.newTest.substring(0,20)'>
-
-            	<p class="h6">{{item.name}}<br/></p>
-            	<p class="text-muted">{{item.upTime}}</p>
+              <div class="mdui-card">
+                <div class="mdui-card-media">
+                  <img :src="item.imgUrl"/>
+                  <div class="mdui-card-media-covered">
+                    <div class="mdui-card-primary showPic">
+                      <div class="mdui-card-primary-title">{{item.name}}</div>
+                      <div class="mdui-card-primary-subtitle">{{item.upTime}}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mdui-card-actions  mdui-center">
+                  <a class="mdui-col" @click.stop="toggle(item,'loveNum','checkedL')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedL}"><i class="mdui-icon material-icons">thumb_up</i>{{item.loveNum}}</a>
+                  <a class="mdui-col"  @click.stop="toggle(item,'hateNum','checkedH')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedH}"><i class="mdui-icon material-icons">thumb_down</i>{{item.hateNum}}</a>
+                </div>
+              </div>
             </a>
-
           </li>
-          <p class="col-xs-12 text-center last-p">我是有底线的</p>
-          <p class="col-xs-12" v-show="!picData.length">新闻列表为空</p>
+          <p class="mdui-col-xs-12 mdui-text-center last-p">我是有底线的</p>
+          <p class="mdui-col-xs-12" v-show="!picData.length">新闻列表为空</p>
         </ul>
     </div>
 </transition>
@@ -97,7 +108,7 @@ export default {
 };
 </script>
 
-<style>
+<style rel='stylesheet/stylus'>
 #myCarousel{
   height: 200px;
 }
@@ -105,13 +116,28 @@ export default {
   height: 100%;
   width: 100%;
 }
-.showPic .list-unstyled .thumbnail{
-    text-align: center;
-    background-image: url(../../../static/img/MSHKLogo.jpg);
-    background-size: 80% 60%;
-    background-repeat: no-repeat;
-    background-position: center 0.5em;
-    margin-bottom: 10px;
-    padding-top: 6.5em;
+.thumbnail .mdui-card {
+  margin: 0.5rem;
+}
+.thumbnail .mdui-card .mdui-card-media{
+  margin: 0.1rem;
+}
+.mdui-col{
+  padding: 0;
+}
+.mdui-col .mdui-icon{
+  font-size: 0.5rem;
+  padding: 0;
+}
+.mdui-card-primary.showPic{
+    padding: 0.3rem 0.5rem 0 0.5rem;
+}
+.mdui-card-primary.showPic .mdui-card-primary-title {
+    font-size: 1rem;
+    line-height: 1rem;
+}
+.mdui-card-primary.showPic .mdui-card-primary-subtitle {
+    font-size: 0.5rem;
+    line-height: 1rem;
 }
 </style>

@@ -17,7 +17,8 @@
     "vue": "^2.3.3",
     "vue-router": "^2.6.0",
     "vue-resource":"^1.3.4",
-    "wind-dom": "0.0.3"
+    "wind-dom": "^0.0.3",
+    "mdui": "^0.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

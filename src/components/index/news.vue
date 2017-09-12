@@ -1,26 +1,28 @@
 <template>
   <transition name="slide">
-      <div class="showNew">
-          <ul class="list-group">
-            <li class="list-group-item col-xs-12"  v-for="(item,index) in newsData" :id="'new-' + index">
+      <div class="mdui-container-fulid">
+          <ul class="mdui-list">
+            <li class="mdui-list-item"  v-for="(item,index) in newsData" :id="'new-' + index">
               <a class="newlist">
-                <span class="col-xs-2 newListLeft">
-                  <p class="lead h3">{{item.name.substring(0,1)}}</p>
-                </span>
-                <span class="col-xs-10">
-                  新闻发布时间：<span class="text-muted">{{item.upTime}}<br/></span>
-                  <p class="h4 help-block">{{item.name}}<br/></p>
-                  <p class="h5 help-block">{{item.newTest.substring(0,20)}}<br/></p>
-                  <span class="row help-block">
-                    <span class="col-xs-3 glyphicon glyphicon-thumbs-up text-nowrap" @click.stop="toggle(item,'loveNum','checkedL')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedL}">{{item.loveNum}}</span>
-                    <span class="col-xs-3 glyphicon glyphicon-thumbs-down text-nowrap"  @click.stop="toggle(item,'hateNum','checkedH')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedH}">{{item.hateNum}}</span>
-                    <span class="col-xs-6 text-nowrap"  @click.stop="++item.visitNum">阅读量({{item.visitNum}})</span>
-                  </span>
-                </span>
+                <div class="mdui-list-item-avatar newListLeft mdui-float-left"></div>
+                <div class="mdui-list-item-content">
+                  <small class="mdui-typo-caption-opacity">新闻发布时间：{{item.upTime}}<br/></small>
+                  <div class="mdui-list-item-title">{{item.name}}</div>
+                  <div class="mdui-list-item-text mdui-list-item-one-line">
+                     {{item.newTest.substring(0,20)}}
+                  </div>
+                  <div class="mdui-float-right btn-group">
+                    <span class="mdui-col-xs-3 text-nowrap" @click.stop="toggle(item,'loveNum','checkedL')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedL}"><i class="mdui-icon material-icons">thumb_up</i>{{item.loveNum}}</span>
+                    <span class="mdui-col-xs-3 text-nowrap"  @click.stop="toggle(item,'hateNum','checkedH')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedH}"><i class="mdui-icon material-icons">thumb_down</i>{{item.hateNum}}</span>
+                    <span class="mdui-col-xs-6 text-nowrap"  @click.stop="++item.visitNum">阅读量({{item.visitNum}})</span>
+                  </div>
+                </div>
+
               </a>
+
             </li>
-            <p class="col-xs-12 text-center last-p">我是有底线的</p>
-            <p class="col-xs-12" v-show="!newsData.length">新闻列表为空</p>
+            <p class="mdui-col-xs-12 mdui-text-center last-p">我是有底线的</p>
+            <p class="mdui-col-xs-12" v-show="!newsData.length">新闻列表为空</p>
           </ul>
       </div>
 </transition>
@@ -91,49 +93,28 @@ export default {
 };
 </script>
 
-<style>
-.list-group-item:first-child {
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-top-width: 0;
-}
-
-.list-group-item{
-  border-width: 1px 0;
-  padding: 0 15px;
-}
+<style scoped>
 .newlist{
   cursor: pointer;
+  border-bottom: 1px solid var(--c);
 }
-.newlist .lead.h3{
-  color: var(--c);
-  line-height: 50px;
+.mdui-col-xs-3.text-nowrap .material-icons {
+    font-size: 0.5rem;
+}
+.btn-group{
+  color: #6b6868;
+  font-size: 0.5rem;
 }
 .newlist .newListLeft{
-  padding:20px 0;
-  text-align: center;
-  background:#fff url(../../../static/img/MSHKLogo.jpg)  no-repeat;
+  margin: 1rem 0.5rem;
+  background: #fff url(/static/img/MSHKLogo.2ab79de.jpg) no-repeat;
   background-position: center center;
-  background-size:100% 100%;
-  border-color: var(--c);
-  border-radius: 20px;
-  box-sizing: border-box;
+  background-size: 100% 100%;
 }
-.newlist .newListLeft::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: -1;
-    /*-1 可以当背景*/
-    -webkit-filter: blur(5rem);
-    filter: blur(5rem);
-    background: url(../../../static/img/MSHKLogo.jpg) center top;
-    background-size: cover;
-    /*平铺*/
-    background-attachment: fixed;
-    /*位置固定*/
+.newlist:hover .mdui-list-item{
+  background-color: rgba(255, 255, 255, 1);
+}
+.mdui-list-item:hover {
+    background-color: rgba(255, 255, 255, 1);
 }
 </style>

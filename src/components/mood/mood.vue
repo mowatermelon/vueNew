@@ -1,21 +1,20 @@
 <template>
   <transition name="fade">
-    <div class="showMood">
-        <ul class="list-group">
-          <li class="list-group-item col-xs-12"  v-for="(item,index) in moodData" :id="'mood-' + index">
+    <div class="mdui-container-fulid">
+        <ul class="mdui-list">
+          <li class="mdui-list-item showMood"  v-for="(item,index) in moodData" :id="'mood-' + index">
             <a class="newlist" @click="godetail(item)">
-              <span class="col-xs-12">
-                心情发布时间：<span class="text-muted">{{item.upTime}}<br/><br/><br/></span>
-                <p class="row help-block">
-                  <span class="col-xs-3 glyphicon glyphicon-thumbs-up text-nowrap" @click.stop="toggle(item,'loveNum','checkedL')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedL}">{{item.loveNum}}</span>
-                  <span class="col-xs-3 glyphicon glyphicon-thumbs-down text-nowrap"  @click.stop="toggle(item,'hateNum','checkedH')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedH}">{{item.hateNum}}</span>
-                  <span class="col-xs-6 text-nowrap"  @click.stop="++item.visitNum">阅读量({{item.visitNum}})</span>
-                </p>
-              </span>
+                  心情发布时间：<span class="text-muted">{{item.upTime}}<br/><br/><br/></span>
+                  <span>{{item.name}}<br/></span>
+                  <div class="mdui-row">
+                    <span class="mdui-col-xs-3 text-nowrap" @click.stop="toggle(item,'loveNum','checkedL')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedL}"><i class="mdui-icon material-icons">thumb_up</i>{{item.loveNum}}</span>
+                    <span class="mdui-col-xs-3 text-nowrap"  @click.stop="toggle(item,'hateNum','checkedH')" :class="{'checked-G':(selectNew==item.newId)&&checkM.checkedH}"><i class="mdui-icon material-icons">thumb_down</i>{{item.hateNum}}</span>
+                    <span class="mdui-col-xs-6 text-nowrap"  @click.stop="++item.visitNum">阅读量({{item.visitNum}})</span>
+                  </div>
             </a>
           </li>
-          <p class="col-xs-12 text-center last-p">我是有底线的</p>
-          <p class="col-xs-12" v-show="!moodData.length">心情列表为空</p>
+          <p class="mdui-col-xs-12 mdui-text-center last-p">我是有底线的</p>
+          <p class="mdui-col-xs-12" v-show="!moodData.length">心情列表为空</p>
         </ul>
     </div>
 </transition>
@@ -86,18 +85,18 @@ export default {
 </script>
 
 <style>
-.showMood .list-group .list-group-item{
-	padding: 0;
-}
-.showMood .list-group .list-group-item .newlist .col-xs-12{
-	  color: #fff;
+.mdui-list-item.showMood{
+	  color: #757575;
 	  background-color: var(--c);
     background-image: url(../../../static/img/MSHKLogo.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
-.showMood .list-group .list-group-item .newlist .col-xs-12:hover{
+.mdui-list-item:hover{
     background-size: 150% 150%;
+}
+.text-nowrap .mdui-icon{
+  font-size: 1rem;
 }
 </style>

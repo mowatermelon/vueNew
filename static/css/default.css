@@ -9,8 +9,7 @@ common css
 */
 :root {
   //--c: #FF9393;
-  --c: #5bc0de;
-
+  --c: #2196f3;
 }
 .bg_root{
 	background:var(--c);
@@ -19,30 +18,25 @@ body{
   color:var(--c);
   font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
   height: 100%;
+  font-size: 12px;
 }
 ul,li {
   margin: 0;
   padding: 0;
 }
+a:-webkit-any-link {
+    color:#000;
+    cursor: auto;
+    text-decoration: underline;
+}
 .text-nowrap{
     white-space: nowrap;
 }
-.m-l-10{
-  margin-left: 10%;
+.mdui-textfield {
+    padding-top: 0;
+    padding-bottom: 0;
 }
-.m-l-20{
-  margin-left: 20%;
-}
-.m-l-30{
-  margin-left: 30%;
-}
-.m-l-40{
-  margin-left: 40%;
-}
-p {
-    margin: auto !important;
-    /*cursor: pointer;*/
-}
+
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     background-color:#fff;
     background-image: none;
@@ -58,23 +52,9 @@ ul, menu, dir {
     -webkit-margin-end: 0px;
     -webkit-padding-start: 0px;
 }
-.btn-link:hover,
-.btn-link:focus {
-  color: var(--c);
-}
 
-.form-control {
-    color: var(--c);
-  }
-
-@media (max-width:768px){
-  .col-xs-12{
-    padding-left:0;
-    padding-right:0;
-  }
-}
 .checked-G{
-  color: var(--c);
+  color: var(--c) !important;
 }
 
 .last-p{
@@ -162,3 +142,25 @@ page-bar css
 showSetting
 
 */
+.mdui-list-item-content {
+  font-size: 14px;
+}
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
