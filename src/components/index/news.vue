@@ -95,6 +95,7 @@ export default {
 
 <style scoped>
 .newlist{
+  width: 100%;
   cursor: pointer;
   border-bottom: 1px solid var(--c);
 }

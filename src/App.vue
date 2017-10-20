@@ -39,8 +39,7 @@ Vue.use(VueResource);
 export default {
   name: 'app',
   created: function() {
-    console.log(this.$route);
-       this.$router.push('v-login'); // 页面加载时跳转
+       this.$router.push('/v-login'); // 页面加载时跳转
   }
 };
 </script>

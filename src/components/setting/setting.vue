@@ -3,7 +3,9 @@
       <div class="showSetting mdui-container-fulid">
           <ul>
           	<li class="mdui-text-center bg_root set_title">个人设置</li>
-            <li class="mdui-col-xs-12" v-for="sname in settingData"  @click="goUrl(sname.url,sname)"><i class="mdui-icon material-icons">{{sname.icon}}</i>{{sname.text}}</li>
+            <li class="mdui-col-xs-12" v-for="sname in settingData"  @click="goUrl(sname.url,sname)">
+              <i class="mdui-icon material-icons">{{sname.icon}}</i>{{sname.text}}
+            </li>
           </ul>
       </div>
 </transition>
